@@ -2,11 +2,10 @@ package streams;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class Streams {
+public class ParallelStreamPractice {
     public static void main(String[] args){
         isParallel();
         doubleItService(false);
@@ -52,12 +51,12 @@ public class Streams {
         if(parallel){
             total = IntStream.of(ints)
                 .parallel()
-                .map(Streams::doubleIt)
+                .map(ParallelStreamPractice::doubleIt)
                 .sum();
         }
         else{
             total = IntStream.of(ints)
-                    .map(Streams::doubleIt)
+                    .map(ParallelStreamPractice::doubleIt)
                     .sum();
         }
         Instant after = Instant.now();
