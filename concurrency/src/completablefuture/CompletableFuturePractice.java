@@ -18,7 +18,7 @@ public class CompletableFuturePractice {
                 throw new RuntimeException("Bad Request Id");
             }
         } catch (InterruptedException ignored){}
-        return new Product(id, "product"+id);
+        return new Product(id, "product"+id, (int) Math.random()*100);
     }
 
     public CompletableFuture<Product> getProduct(int id){
